@@ -9,19 +9,16 @@ import pages.Viewer;
 
 import java.util.concurrent.TimeUnit;
 
-public class mobileTest extends BaseTest {
+public class MobileTest extends BaseTest {
     @Test
     public void testLogin() throws InterruptedException {
         driver.get("https://picsart.com/search/all");
         PicsArtPage page = new PicsArtPage(driver);
         page.cookieClick();
         page.switchToIFrame();
-        page.openFilterColumn(false);
         page.clickLicenseFilter("Personal");
-        TimeUnit.SECONDS.sleep(5);
         page.openFilterColumn(true);
         page.plusAssetsVisible(false);
-        TimeUnit.SECONDS.sleep(5);
         page.clickOneOfTheCards();
         page.switchToDefault();
         Viewer viewerPage = new Viewer(driver);
@@ -29,11 +26,9 @@ public class mobileTest extends BaseTest {
         navigateBack();
         page = new PicsArtPage(driver);
         page.switchToIFrame();
-        TimeUnit.SECONDS.sleep(5);
         page.openFilterColumn(false);
         page.clickLicenseFilter("Personal");
         page.openFilterColumn(true);
-        TimeUnit.SECONDS.sleep(5);
         page.clickOneOfThePlusCards();
         page.switchToDefault();
         TimeUnit.SECONDS.sleep(5);

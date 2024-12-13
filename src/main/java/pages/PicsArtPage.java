@@ -14,6 +14,7 @@ import org.testng.Assert;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class PicsArtPage extends BasePage {
 
@@ -81,6 +82,9 @@ public class PicsArtPage extends BasePage {
     }
     @Step("Choosing the License filter")
     public void clickLicenseFilter(String filterName) {
+        if(!isVisible(filterColumn)) {
+            openFilterColumn(false);
+        }
         String[] licenses = {"All", "Commercial", "Personal"};
         waitForElementClickable(licenseFilters.getFirst());
         if(Arrays.asList(licenses).contains(filterName)) {
@@ -117,7 +121,6 @@ public class PicsArtPage extends BasePage {
         if(size.getWidth() < 1440 && assetCards.isEmpty() && isVisible(filterColumn)){
             openFilterColumn(true);
             click(assetCards.getFirst());
-            openFilterColumn(false);
         } else {
             click(assetCards.getFirst());
         }
@@ -125,5 +128,21 @@ public class PicsArtPage extends BasePage {
     public void clickOneOfThePlusCards() {
 
         click(plusAssets.getFirst());
+    }
+
+    public void verifyFiltersDisappear() {
+        if(isVisible(filterColumn)) {
+            openFilterColumn(true);
+            openFilterColumn(false);
+        } else {
+            openFilterColumn(false);
+            openFilterColumn(true);
+        }
+    }
+
+    public void verifyPlusAssetsDisappear() throws InterruptedException {
+        clickLicenseFilter("Personal");
+        TimeUnit.SECONDS.sleep(5);
+        plusAssetsVisible(false);
     }
 }

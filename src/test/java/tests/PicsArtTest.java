@@ -20,11 +20,8 @@ public class PicsArtTest extends BaseTest {
 
         page.cookieClick();
         page.switchToIFrame();
-        page.openFilterColumn(true);
-        page.openFilterColumn(false);
-        page.clickLicenseFilter("Personal");
-        TimeUnit.SECONDS.sleep(5);
-        page.plusAssetsVisible(false);
+        page.verifyFiltersDisappear();
+        page.verifyPlusAssetsDisappear();
         page.clickOneOfTheCards();
         page.switchToDefault();
 

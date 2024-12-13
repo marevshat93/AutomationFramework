@@ -23,7 +23,7 @@
 <!--    <test name="Login Tests">-->
 <!--        <parameter name="testingPlatform" value="android-browserstack"/>-->
 <!--        <classes>-->
-<!--            <class name="tests.mobileTest" />-->
+<!--            <class name="tests.MobileTest" />-->
 <!--        </classes>-->
 <!--    </test>-->
 </suite>

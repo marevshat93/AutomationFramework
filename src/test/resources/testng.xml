@@ -1,12 +1,12 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Automation Suite" parallel="tests" thread-count="3">
-    <test name="Login Tests">
-        <parameter name="viewPort" value="1024x768"/>
-        <parameter name="testingPlatform" value="web"/>
-        <classes>
-            <class name="tests.PicsArtTest" />
-        </classes>
-    </test>
+<!--    <test name="Login Tests">-->
+<!--        <parameter name="viewPort" value="1024x768"/>-->
+<!--        <parameter name="testingPlatform" value="web"/>-->
+<!--        <classes>-->
+<!--            <class name="tests.PicsArtTest" />-->
+<!--        </classes>-->
+<!--    </test>-->
 <!--    <test name="Login Tests1">-->
 <!--        <parameter name="viewPort" value="1440x900"/>-->
 <!--        <parameter name="testingPlatform" value="web"/>-->
@@ -20,10 +20,10 @@
 <!--            <class name="tests.PicsArtTest" />-->
 <!--        </classes>-->
 <!--    </test>-->
-<!--    <test name="Login Tests">-->
-<!--        <parameter name="testingPlatform" value="android-browserstack"/>-->
-<!--        <classes>-->
-<!--            <class name="tests.mobileTest" />-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Login Tests">
+        <parameter name="testingPlatform" value="android-local"/>
+        <classes>
+            <class name="tests.MobileTest" />
+        </classes>
+    </test>
 </suite>
