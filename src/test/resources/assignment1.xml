@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Automation Suite" parallel="tests" thread-count="3">
+    <test name="Login Tests">
+        <parameter name="viewPort" value="1024x768"/>
+        <parameter name="testingPlatform" value="web"/>
+        <classes>
+            <class name="tests.PicsArtTest" />
+        </classes>
+    </test>
+    <test name="Login Tests1">
+        <parameter name="viewPort" value="1440x900"/>
+        <parameter name="testingPlatform" value="web"/>
+        <classes>
+            <class name="tests.PicsArtTest" />
+        </classes>
+    </test>
+    <test name="Login Tests2">
+        <parameter name="viewPort" value="1366x768"/>
+        <parameter name="testingPlatform" value="web"/>
+        <classes>
+            <class name="tests.PicsArtTest" />
+        </classes>
+    </test>
+</suite>

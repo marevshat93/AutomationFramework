@@ -55,7 +55,8 @@
                 <version>3.5.2</version> <!-- Use the latest version -->
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/assignment1.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/assignment2.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
